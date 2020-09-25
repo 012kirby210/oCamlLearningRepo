@@ -1,0 +1,28 @@
+{
+  "name": "ocamllearningrepo",
+  "version": "1.0.0",
+  "description": "only here to have reason stop complaining",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "bs-platform": "^8.2.0"
+  },
+  "scripts": {
+    "test": "runTest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/012kirby210/oCamlLearningRepo.git"
+  },
+  "keywords": [
+    "oCaml",
+    "Reason",
+    "ML"
+  ],
+  "author": "012kirby210@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/012kirby210/oCamlLearningRepo/issues"
+  },
+  "homepage": "https://github.com/012kirby210/oCamlLearningRepo#readme"
+}
