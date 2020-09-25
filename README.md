@@ -18,8 +18,10 @@ eval (opam env)
 opam --version
 ```
 ### 3.Install Atom
-* Télécharger le package et l'installer https://atom.io/
-* Intaller le paquet atom nuclide
+* Download the package and install it https://atom.io/
+* Install the ide-ui service https://atom.io/packages/atom-ide-ui
+* Install the reason-ide package which use ocaml https://atom.io/packages/ide-reason
+* Install the ocaml-language package https://atom.io/packages/language-ocaml
 
 ### 4.Configure IDE
 * Installation de merlin  : https://github.com/ocaml/merlin
@@ -27,5 +29,3 @@ opam --version
 opam install merlin
 opam user-setup install
 ```
-
-
