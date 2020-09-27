@@ -17,17 +17,23 @@ opam init
 eval (opam env)
 opam --version
 ```
-### 3.Install Atom
-* Download the package and install it https://atom.io/
-* Install the ide-ui service https://atom.io/packages/atom-ide-ui
-* Install the reason-ide package which use ocaml https://atom.io/packages/ide-reason
- * Install the bucklescript node package ```console sudo npm install -g bs-platform``` [global]
- * Install the node package as a dev dependancy ```console npm install --save-dev bs-platfom```
-* Install the ocaml-language package https://atom.io/packages/language-ocaml
-
-### 4.Complete the ocaml installation
-* Installation de merlin  : https://github.com/ocaml/merlin
+### 3.Ocaml packages :
+* Merlin - language server -
 ```console
 opam install merlin
+```
+* OCP Indent
+```console
+opam install ocp-indent
+```
+* Auto-configure edit mode for 'out-of-the-box' supported one's
+```console
 opam user-setup install
 ```
+
+### 4.Install Atom
+* Download the package and install it https://atom.io/
+* Install the ocaml-merlin package https://atom.io/packages/ocaml-merlin
+ * Install linter https://atom.io/packages/linter
+ * Install language-ocaml syntax highlights https://atom.io/packages/language-ocaml
+ * Install indent package https://atom.io/packages/ocaml-indent
