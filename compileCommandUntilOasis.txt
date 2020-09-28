@@ -1,0 +1,1 @@
+ocamlfind ocamlopt -o ./release/unitNumber -linkpkg -package graphics ./unitNumber.ml
