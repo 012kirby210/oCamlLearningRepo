@@ -68,3 +68,40 @@ print_endline "let test x = if x>0 then 1 else \"1\";; [erreur : le type de l'ex
 print_endline "let f x = not x;; [ bool -> bool = <func>]";;
 print_endline "f not true;; [ erreur : panique compilation ]";;
 print_endline "f (not true);; [ - : bool = true ]";;
+(* Exercice 4*)
+print_endline "Exercice 4 :";;
+print_endline "Question 1 :";;
+print_endline "(if 3 > 7 then 1 else 10) + 5;; est une expression évaluant un entier valant 15";;
+print_endline "let a = (if 3 > 7 then 1 else 10) + 5;; est la déclaration de l'étiquette a comme un entier valant 15";;
+print_endline "let b = 1 in let c = b;; est une erreur de syntaxe car let c = b est une déclaration qui n'évalue pas à une expression potentiellement utilisable à la suite de in";;
+print_endline "let b = 1 in let c = b in b=c;; est une expression qui évalue un booléen valant true";;
+print_endline "b;; est une expression qui ne peut être évaluée car l'étiquette b n'est pas déclarée dans le top level";;
+print_endline "let b = let c = 3 in c+5;; est une déclaration d'étiquette valant le résultat de l'expression évaluant un entier valant 8";;
+print_endline "b;; est une expression évaluant l'étiquette préalablement déclarée";;
+print_endline "Exercice 2 : ";;
+print_endline "let f x = ";;
+print_endline "  let g y = Char.code y";;
+print_endline "  in Char.chr (succ (g x));;";;
+print_endline " déclare f comme une fonction prenant un argument de type charactère et renvoie le charactère suivant, la fonction plante pour la
+valeur de charactère '\255'";;
+(* Exercice 5 *)
+print_endline "Exercice 5";;
+print_endline "let minuscule c = ('a' <= c) && (c <= 'z');; est un observateur minuscule du charactère c";;
+print_endline "let majuscule c = ('A' <= c) && (c <= 'Z');; est un observateur majuscule du charactère c";;
+print_endline "let lettre c =  majuscule c || minuscule c;; est un observateur de charactère de type lettre";;
+print_endline "Définition de la fonction lettre avec définition locale des fonctions majuscule et minuscule : ";;
+print_endline "let lettre c = ";;
+print_endline "  ( let minuscule x = ('a' <= x) && (x <= 'z') in ";;
+print_endline "    minuscule c ) ||";;
+print_endline "  (let majuscule y = ('A' <= y) && (y <= 'Z') in";;
+print_endline "    majuscule c );;";;
+print_endline "Développement absolu du traitement : ";;
+print_endline "let lettre c = ((c >= 'a') && (c <= 'z')) || ((c >= 'A') && (c <= 'Z'))";;
+print_endline "Définition d'une fonction observateur chiffre";;
+print_endline "let chiffre c = (c>='0') && (c<='9');;";;
+(* Exercice 6 : *)
+print_endline "Exercice 6 :";;
+print_endline "Q1 : let divisible a b = a mod b = 0;;";;
+print_endline "Q2 : let pair a = let divisible b c = b mod c = 0 in divisible a 2;;";;
+(* Exercice 7 : *)
+print_endline "Exercice 7 : ";;
