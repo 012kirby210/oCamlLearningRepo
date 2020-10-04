@@ -105,3 +105,17 @@ print_endline "Q1 : let divisible a b = a mod b = 0;;";;
 print_endline "Q2 : let pair a = let divisible b c = b mod c = 0 in divisible a 2;;";;
 (* Exercice 7 : *)
 print_endline "Exercice 7 : ";;
+print_endline "float_of_int;; (1) ?";;
+print_endline "float_of_int 2;; appel de la fonction sur l'entier 2 et le transorme en 2. ?";;
+print_endline "3.5 +. 2.;; est l'évaluation d'une addition de floattants.";;
+print_endline "3.5 +. 2;; ne peut être évalué en vertu de la dyssemie des types en association.";;
+print_endline "let inverse x = match x";;
+print_endline "with 0 -> raise Division_by_zero";;
+print_endline "| _ -> 1. /. (float_of_int x);; avec 0, la fonction lève une exception, sans l'exception le chiffre est pensé comme la limite en l'infini d'une fonction continue.";;
+(* Exercice 8*)
+print_endline "Exercice 8 : ";;
+print_endline "int_of_char renvoie l'entier correspondant au numéro décimal du caractère dans la table ascii.";;
+print_endline "let car_vers_chiffre c = let is_chiffre x = (x>='0' && x <='9') in " ;;
+print_endline "match is_chiffre c ";;
+print_endline "with true -> int_of_char c - int_of_char '0'";;
+print_endline "| _ -> int_of_char c;;";;
