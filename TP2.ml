@@ -228,4 +228,46 @@ let lendemain jour = let numOfDays m y = (match m with
       {day=1;month=mois_lendemain_formatted;year=jour.year}
   else
     let jour_lendemain_formatted = if jour_lendemain = 0 then (numOfDays jour.month jour.year) else jour_lendemain in
-    {day=jour_lendemain;month=jour.month;year=jour.year};;
+    {day=jour_lendemain_formatted;month=jour.month;year=jour.year};;
+print_endline ("Exercice 8 :")
+(* avec le type date précédent *)
+exception Type_not_found;;
+type date = {day:int;month:int;year:int };;
+type employe = {nom:string; salaire:float;dateEntree:date};;
+let morePaid e1 e2 = if e1.salaire < e2.salaire then e2 else e1;;
+(*let anciennete e t = match t with
+  | 'mois' -> Unix.gmtime (Unix)
+  | 'annee'-> ()
+  |_-> raise Type_not_found;;
+*)
+let yearSorted y1 y2 = if y1.year < y2.year then (y1,y2) else
+  if y1.year > y2.year then (y2,y1) else
+  if y1.month < y2.month then (y1,y2) else
+  if y1.month > y2.month then (y2,y1) else
+  if y1.day < y2.day then (y1,y2) else
+    (y2,y1);;
+
+(* Sur la différence des années :
+   date2 > date1
+   si date2.jour < date1.jour => retenue -1 mois.
+   si date2.mois < date1.mois => retenue -1 an.
+
+*)
+
+let abs a = if a < 0 then (0-a) else a;;
+(* give the number of days of the month of the date passed as an argument *)
+let numberOfDaysForTheMonth d = let y = d.year in
+  let m = d.month in
+  match m with
+    1|3|5|7|8|10|12 -> 31
+  |2 -> if (bissextile y) then 29 else 28
+  |_-> 30;;
+
+let differenceDate y1 y2 =
+  let (olderDate,newerDate) = yearSorted y1 y2 in
+  let   carryMonth = if newerDate.day <olderDate.day then 1 else 0 in
+  let carryYear = if newerDate.month<olderDate.month then 1 else 0 in
+  let olderDateMonthDayNumber = numberOfDaysForTheMonth olderDate in
+  ( (newerDate.day - olderDate.day+olderDateMonthDayNumber) mod olderDateMonthDayNumber,
+    ((newerDate.month - olderDate.month +12) mod 12) - carryMonth,
+    abs (y1.year - y2.year) - carryYear);;
